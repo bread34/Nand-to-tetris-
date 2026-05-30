@@ -1,0 +1,145 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/1/Mux16.hdl
+/**
+ * 16-bit multiplexor: 
+ * for i = 0, ..., 15:
+ * if (sel = 0) out[i] = a[i], else out[i] = b[i]
+ */
+CHIP Mux16 {
+    IN a[16], b[16], sel;
+    OUT out[16];
+
+    PARTS:
+    Nand(a=sel, b=sel, out=notS);
+
+Nand(a=a[0], b=notS, out=nA0);
+Nand(a=nA0, b=nA0, out=A0);
+Nand(a=b[0], b=sel, out=nB0);
+Nand(a=nB0, b=nB0, out=B0);
+Nand(a=A0, b=A0, out=na0);
+Nand(a=B0, b=B0, out=nb0);
+Nand(a=na0, b=nb0, out=out[0]);
+
+Nand(a=a[1], b=notS, out=nA1);
+Nand(a=nA1, b=nA1, out=A1);
+Nand(a=b[1], b=sel, out=nB1);
+Nand(a=nB1, b=nB1, out=B1);
+Nand(a=A1, b=A1, out=na1);
+Nand(a=B1, b=B1, out=nb1);
+Nand(a=na1, b=nb1, out=out[1]);
+
+Nand(a=a[2], b=notS, out=nA2);
+Nand(a=nA2, b=nA2, out=A2);
+Nand(a=b[2], b=sel, out=nB2);
+Nand(a=nB2, b=nB2, out=B2);
+Nand(a=A2, b=A2, out=na2);
+Nand(a=B2, b=B2, out=nb2);
+Nand(a=na2, b=nb2, out=out[2]);
+
+Nand(a=a[3], b=notS, out=nA3);
+Nand(a=nA3, b=nA3, out=A3);
+Nand(a=b[3], b=sel, out=nB3);
+Nand(a=nB3, b=nB3, out=B3);
+Nand(a=A3, b=A3, out=na3);
+Nand(a=B3, b=B3, out=nb3);
+Nand(a=na3, b=nb3, out=out[3]);
+
+Nand(a=a[4], b=notS, out=nA4);
+Nand(a=nA4, b=nA4, out=A4);
+Nand(a=b[4], b=sel, out=nB4);
+Nand(a=nB4, b=nB4, out=B4);
+Nand(a=A4, b=A4, out=na4);
+Nand(a=B4, b=B4, out=nb4);
+Nand(a=na4, b=nb4, out=out[4]);
+
+Nand(a=a[5], b=notS, out=nA5);
+Nand(a=nA5, b=nA5, out=A5);
+Nand(a=b[5], b=sel, out=nB5);
+Nand(a=nB5, b=nB5, out=B5);
+Nand(a=A5, b=A5, out=na5);
+Nand(a=B5, b=B5, out=nb5);
+Nand(a=na5, b=nb5, out=out[5]);
+
+Nand(a=a[6], b=notS, out=nA6);
+Nand(a=nA6, b=nA6, out=A6);
+Nand(a=b[6], b=sel, out=nB6);
+Nand(a=nB6, b=nB6, out=B6);
+Nand(a=A6, b=A6, out=na6);
+Nand(a=B6, b=B6, out=nb6);
+Nand(a=na6, b=nb6, out=out[6]);
+
+Nand(a=a[7], b=notS, out=nA7);
+Nand(a=nA7, b=nA7, out=A7);
+Nand(a=b[7], b=sel, out=nB7);
+Nand(a=nB7, b=nB7, out=B7);
+Nand(a=A7, b=A7, out=na7);
+Nand(a=B7, b=B7, out=nb7);
+Nand(a=na7, b=nb7, out=out[7]);
+
+Nand(a=a[8], b=notS, out=nA8);
+Nand(a=nA8, b=nA8, out=A8);
+Nand(a=b[8], b=sel, out=nB8);
+Nand(a=nB8, b=nB8, out=B8);
+Nand(a=A8, b=A8, out=na8);
+Nand(a=B8, b=B8, out=nb8);
+Nand(a=na8, b=nb8, out=out[8]);
+
+Nand(a=a[9], b=notS, out=nA9);
+Nand(a=nA9, b=nA9, out=A9);
+Nand(a=b[9], b=sel, out=nB9);
+Nand(a=nB9, b=nB9, out=B9);
+Nand(a=A9, b=A9, out=na9);
+Nand(a=B9, b=B9, out=nb9);
+Nand(a=na9, b=nb9, out=out[9]);
+
+Nand(a=a[10], b=notS, out=nA10);
+Nand(a=nA10, b=nA10, out=A10);
+Nand(a=b[10], b=sel, out=nB10);
+Nand(a=nB10, b=nB10, out=B10);
+Nand(a=A10, b=A10, out=na10);
+Nand(a=B10, b=B10, out=nb10);
+Nand(a=na10, b=nb10, out=out[10]);
+
+Nand(a=a[11], b=notS, out=nA11);
+Nand(a=nA11, b=nA11, out=A11);
+Nand(a=b[11], b=sel, out=nB11);
+Nand(a=nB11, b=nB11, out=B11);
+Nand(a=A11, b=A11, out=na11);
+Nand(a=B11, b=B11, out=nb11);
+Nand(a=na11, b=nb11, out=out[11]);
+
+Nand(a=a[12], b=notS, out=nA12);
+Nand(a=nA12, b=nA12, out=A12);
+Nand(a=b[12], b=sel, out=nB12);
+Nand(a=nB12, b=nB12, out=B12);
+Nand(a=A12, b=A12, out=na12);
+Nand(a=B12, b=B12, out=nb12);
+Nand(a=na12, b=nb12, out=out[12]);
+
+Nand(a=a[13], b=notS, out=nA13);
+Nand(a=nA13, b=nA13, out=A13);
+Nand(a=b[13], b=sel, out=nB13);
+Nand(a=nB13, b=nB13, out=B13);
+Nand(a=A13, b=A13, out=na13);
+Nand(a=B13, b=B13, out=nb13);
+Nand(a=na13, b=nb13, out=out[13]);
+
+Nand(a=a[14], b=notS, out=nA14);
+Nand(a=nA14, b=nA14, out=A14);
+Nand(a=b[14], b=sel, out=nB14);
+Nand(a=nB14, b=nB14, out=B14);
+Nand(a=A14, b=A14, out=na14);
+Nand(a=B14, b=B14, out=nb14);
+Nand(a=na14, b=nb14, out=out[14]);
+
+Nand(a=a[15], b=notS, out=nA15);
+Nand(a=nA15, b=nA15, out=A15);
+Nand(a=b[15], b=sel, out=nB15);
+Nand(a=nB15, b=nB15, out=B15);
+Nand(a=A15, b=A15, out=na15);
+Nand(a=B15, b=B15, out=nb15);
+Nand(a=na15, b=nb15, out=out[15]);
+    //// Replace this comment with your code.
+}
